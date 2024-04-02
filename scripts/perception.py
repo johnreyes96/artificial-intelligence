@@ -13,26 +13,26 @@ X, y = make_blobs(n_samples=30, centers=2, n_features=2, random_state=0)
 
 fig, ax = plt.subplots()
 
-ax.scatter(x=X[:,0], y=X[:,1], c=y)
+ax.scatter(x=X[:, 0], y=X[:, 1], c=y)
 plt.show()
 
-W = np.zeros(2)
+W = np.array([1.5, 2])
 b = 0
 print(W.shape)
 
 print('X_0:')
-print(X[0,:])
+print(X[0, :])
 print('W: ')
 print(W)
 
+
 def dot(p, q):
-  return p[0]*q[0]+p[1]*q[1]
+    return p[0] * q[0] + p[1] * q[1]
 
-dot(W,X[0,:])
 
-b = 0
+print(dot(W, X[0, :]))
 
-res = y[0]*(np.dot(W,X[0,:]) + b)
+res = y[0] * (np.dot(W, X[0, :]) + b)
 print(res)
 
 # Paso 1: inicialización
@@ -42,13 +42,13 @@ b = 0
 # Paso 4: repetir pasos 2 y 3
 for i in range(30):
 
-  # Paso 2: verificar si la muestra x_i está bien clasificada
-  res = y[i] * (dot(X[i,:], W) + b)
+    # Paso 2: verificar si la muestra x_i está bien clasificada
+    res = y[i] * (dot(X[i, :], W) + b)
 
-  # Paso 3: Actualizar W y b si está mal aplicada
-  if res <= 0:
-    W = W + y[i] * X[i,:]
-    b = y[i] + b
+    # Paso 3: Actualizar W y b si está mal aplicada
+    if res <= 0:
+        W = W + y[i] * X[i, :]
+        b = y[i] + b
 
 print('W:')
 print(W)
@@ -56,20 +56,13 @@ print(W)
 print('b:')
 print(b)
 
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_blobs
-
 X, y = make_blobs(n_samples=30, centers=2, n_features=2, random_state=0)
 
-fig, ax = plt.subplots()
-
-
 x_ = np.array([-2, 3])
-y_ = -(W[1]*x_/W[0])-(b/W[0])
+y_ = -(W[1] * x_ / W[0]) - (b / W[0])
 
-fig, ax = plt.subplots()
+_, ax = plt.subplots()
 
 ax.plot(x_, y_, linewidth=2.0)
-ax.scatter(x=X[:,0], y=X[:,1], c=y)
+ax.scatter(x=X[:, 0], y=X[:, 1], c=y)
 plt.show()
