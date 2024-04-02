@@ -1,2 +1,2 @@
 # Artificial intelligence algorithms
-Algorithms developed in Jupyter Notebook on artificial intelligence.
+Algorithms developed in Python on artificial intelligence.
