@@ -11,17 +11,17 @@ w = np.array([3, 2])
 b = -1
 
 x2 = np.array([0, 1])
-x1 = -(w[1]*x2/w[0])-(b/w[0])
+x1 = -(w[1] * x2 / w[0]) - (b / w[0])
 print(x1)
 
 fig, ax = plt.subplots()
 
 ax.plot(x2, x1, linewidth=2.0)
-ax.scatter(x=np.array([0.6, 0.2]), y=np.array([0.2, -0.2]), c=['yellow','red'])
+ax.scatter(x=np.array([0.6, 0.2]), y=np.array([0.2, -0.2]), c=['yellow', 'red'])
 plt.show()
 
 print(np.dot(w, np.array([0.6, 0.2])) + b)
 print(np.dot(w, np.array([0.2, -0.2])) + b)
-print(np.dot(w,np.array([1/3,0]))+b)
-print(np.dot(w,np.array([1,1]))+b)
-w = np.array([3,2])
+print(np.dot(w, np.array([1 / 3, 0])) + b)
+print(np.dot(w, np.array([1, 1])) + b)
+w = np.array([3, 2])
