@@ -13,3 +13,4 @@ run ´pip install lib´ command where "lib" is the library name.
 - sklearn
 - scipy
 - pandas
+- pickle
