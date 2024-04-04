@@ -11,3 +11,5 @@ run ´pip install lib´ command where "lib" is the library name.
 - numpy
 - matplotlib
 - sklearn
+- scipy
+- pandas
